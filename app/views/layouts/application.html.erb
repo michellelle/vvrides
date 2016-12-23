@@ -11,25 +11,66 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Kreon:700|Petit+Formal+Script" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  
 
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo center">Logo</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-       <li><a href="/about">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand" do %>
+    <i class="fa fa-paw"></i>
+      Logo
+    <% end %>
+    <ul class="nav navbar-nav navbar-right">
+      <% if current_user %>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign In", new_user_session_path, method: :get %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <a id="back-to-top" href="#" class="btn btn-warning btn-circle btn-xl back-to-top" role="button" data-toggle="tooltip" title="top" data-placement="left"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+  
   <%= yield %>
+  
+  <style>
+.footer, .ftbg {
+    font-size: 100%;
+    margin-bottom: 20px;
+    background-color: #b2b2b2;
+}
+</style>
+
+  
+  <footer class="container-fluid text-center" id="ftbg">
+    <a href="#myPage" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <div class="row">
+      <div class="col-sm-4">
+      <i class="fa fa-paw" id="logo"></i>
+      </div>
+      <div class="col-sm-4">
+        <h2><b>Re-home Pet</b></h2>
+        <p class="paw"><b>Communtity based upon building trust from devotion.</b></p>
+      </div>
+    </div>
+    <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a><a href="https://twitter.com/mrspok407" target="_blank" class="icon-link icon-link--twitter" id="credit img slider">slider</a></p>
+  </footer>
+
 
   <script>
     $(".button-collapse").sideNav();  
