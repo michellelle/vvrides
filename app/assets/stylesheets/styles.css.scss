@@ -19,11 +19,6 @@
     color: #fff !important;
 }
 
-/*contact padding*/
-#class {
-	padding-top: 100px;
-}
-
 /*Re-home title home page*/
 #bg-2 { 
 	font-size: 200%;
@@ -64,6 +59,7 @@
 body {
     font-family: 'Kreon', 'serif';
     background-color: #f4e1d2;
+    padding-top: 50px;
 }
 
 .paw {
@@ -72,12 +68,12 @@ body {
 }
 
 /* Add a hint of purple color to all icons and set the font-size */
-.glyphicon-small {
+.glyphicon-small, #logo2 {
     color: #b2b2b2;
     font-size: 50px;
 }
 
-.glyphicon {
+.glyphicon, #logo2 {
     color: #b2b2b2;
     font-size: 500%;
 }
