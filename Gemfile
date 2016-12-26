@@ -8,7 +8,7 @@ end
 
 
 # Use devise gem for login
-gem 'devise', '~> 4.2.0'
+gem 'devise', '3.4.1'
 # Use fontawesome for style icons
 gem 'font-awesome-sass', '~> 4.6.2'
 #Use bootstrap library for stylesheets
