@@ -61,10 +61,6 @@ body {
     background-color: #f4e1d2;
 }
 
-.a {
-	color: #fff;
-}
-
 .paw {
     font-family: 'Petit Formal Script', 'cursive';
     text-shadow: 3px 2px #b2b2b2;
@@ -123,7 +119,7 @@ $imgSpd: 2000 * 1ms;
 
 $bgPics: (
 url('cuddles.jpg') center center no-repeat,	url('Rabbit!.jpg') center center no-repeat,	url('birds.jpg') center center no-repeat,
-url('underwater-1216244__340.jpg') center center no-repeat
+url('home.jpg') center center no-repeat
 );
 
 @mixin mediaMaxW($width) {

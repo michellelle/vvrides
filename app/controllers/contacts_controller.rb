@@ -7,22 +7,14 @@ class ContactsController < ApplicationController
         @contact = Contact.new(contact_params)
         
         if @contact.save
-            name = params[:contact][:name]
-            email = params[:contact][:email]
-            body = params[:contact][:comments]
-            
-            ContactMailer.contact_email(name, email, body).deliver
-            
-            flash[:success] = 'Thank you, message is sent.'
-            redirect_to new_contact_path
+            redirect_to new_contact_path, notice: "Message sent."
         else
-            flash[:danger] = 'Error occured, message has not been sent.'
-            redirect_to new_contact_path
+            redirect_to new_contact_path, notice: "Error occured."
         end
     end
     
     private
-     def contact_params
-        params.require(:contact).permit(:name, :email, :comments)
-     end
+        def contact_params
+            params.require(:contact).permit(:name, :email, :comments)
+        end
 end
